@@ -47,26 +47,26 @@ export class FallingObjects {
         }
 
         else if (rollingStownLeft) {
-            await this.timeout(SETTINGS.FALLING_STONE_TIME_MS/2)
+            await this.timeout(SETTINGS.FALLING_STONE_TIME_MS / 2)
             if (rollingStownLeft && SETTINGS.board[i][j] == type) {
                 console.log("wystepuje taka zaleznosc");
                 SETTINGS.board[i][j] = ""
                 SETTINGS.board[i][j - 1] = type
 
-                this.itemCheck(i + 1, j, type, SETTINGS.FALLING_STONE_TIME_MS/2, true)
+                this.itemCheck(i + 1, j, type, SETTINGS.FALLING_STONE_TIME_MS / 2, true)
                 await this.check()
                 board.create();
             }
 
         }
         else if (rollingStownRight) {
-            await this.timeout(SETTINGS.FALLING_STONE_TIME_MS/2)
+            await this.timeout(SETTINGS.FALLING_STONE_TIME_MS / 2)
             if (rollingStownRight && SETTINGS.board[i][j] == type) {
                 console.log("wystepuje taka zaleznosc");
                 SETTINGS.board[i][j] = ""
                 SETTINGS.board[i][j + 1] = type
 
-                this.itemCheck(i + 1, j, type, SETTINGS.FALLING_STONE_TIME_MS/2, true)
+                this.itemCheck(i + 1, j, type, SETTINGS.FALLING_STONE_TIME_MS / 2, true)
                 await this.check();
                 board.create();
             }
