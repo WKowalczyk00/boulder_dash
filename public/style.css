@@ -1,0 +1,36 @@
+td {
+    border: 2px solid black;
+    /* background-color: red; */
+    width: 100px;
+    height: 100px;
+}
+
+/* wall */
+.w {
+    background-color: #222222;
+}
+
+/* point */
+.p {
+    background-color: yellow;
+}
+
+/* stone */
+.s{
+    background-color: slategray;
+}
+
+/* player */
+.X{
+    background-color: #77fa0c;
+}
+
+/* dirt */
+.D{
+    background-color: #964B00;
+}
+
+/* exit */
+.e{
+    background-color: blue;
+}
