@@ -1,13 +1,15 @@
-import { travel } from "./index";
+import { travel, Position } from "./index";
 import { SETTINGS } from "./Settings";
 
 export class Board {
-    inWhichPart: number;
+    inWhichPart: Position;
     constructor() {
-        this.inWhichPart = 0;
+        this.inWhichPart = { i: 0, j: 0 };
         this.create();
     }
     create = async () => {
+        if (await this.getPosition() != false)
+            this.getBoardPart();
         const BOARD = SETTINGS.board
         const boardDiv = document.getElementById("board")
         boardDiv ? boardDiv.innerHTML = "" : false
@@ -26,8 +28,26 @@ export class Board {
             }
         }
     }
-    getBoardPart = () => {
-        const PLAYER_POSITION = travel.getPosition()
-        // if
+
+    getBoardPart = async () => {
+        const playerPositon = await this.getPosition() as Position
+        console.log(playerPositon.i);
+        if (playerPositon.i == SETTINGS.changeBoardPart[this.inWhichPart.i][this.inWhichPart.j].i || playerPositon.j == SETTINGS.changeBoardPart[this.inWhichPart.i][this.inWhichPart.j].j) {
+
+        }
+
+
+    }
+
+    getPosition = async () => {
+        for (let i = 0; i < SETTINGS.board.length; i++) {
+            for (let j = 0; j < SETTINGS.board[i].length; j++) {
+                if (SETTINGS.board[i][j] == "X") {
+                    return { i: i, j: j }
+                }
+
+            }
+        }
+        return false
     }
 }

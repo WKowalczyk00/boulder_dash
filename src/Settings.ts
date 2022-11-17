@@ -11,7 +11,10 @@ export const SETTINGS = {
             ["w", "w", "w", "w", "w", "w", "w", "w", "w", "w"]
         ],
     boardPart: [],
-    changeBoardPart: [{ j: 3 }, { j: 5 }, { i: 3 }, { i: 5 }],
+    changeBoardPart: [
+        [{ i: 3, j: 3 }, { i: 3, j: 5 }],
+        [{ i: 5, j: 3 }, { i: 5, j: 5 }]
+    ],
     FALLING_STONE_TIME_MS: 1000,
     HOLD_KEY_TIME_MS: 500,
 }
