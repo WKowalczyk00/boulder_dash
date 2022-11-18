@@ -15,16 +15,18 @@ export class Board {
         boardDiv ? boardDiv.innerHTML = "" : false
         // boardDiv?.innerHTML = ""
         for (let i = 0; i < BOARD.length; i++) {
-            const tr = document.createElement("tr")
+            const tr = document.createElement("div")
+            tr.classList.add("row")
             boardDiv?.appendChild(tr)
 
             // tr.innerHTML = "x"
             for (let j = 0; j < BOARD[i].length; j++) {
-                const td = document.createElement("td")
+                const td = document.createElement("div")
+                td.classList.add("square")
                 tr.appendChild(td)
                 td.innerHTML = i + "_" + j
-
-                td.className = BOARD[i][j]
+                td.className += " "+BOARD[i][j];
+                // td.classList.add(BOARD[i][j])
             }
         }
     }
