@@ -34,9 +34,9 @@ export class Board {
     getBoardPart = async () => {
         const playerPositon = await this.getPosition() as Position
         console.log(playerPositon.i);
-        if (playerPositon.i == SETTINGS.changeBoardPart[this.inWhichPart.i][this.inWhichPart.j].i || playerPositon.j == SETTINGS.changeBoardPart[this.inWhichPart.i][this.inWhichPart.j].j) {
+        // if (playerPositon.i == SETTINGS.changeBoardPart[this.inWhichPart.i][this.inWhichPart.j].i || playerPositon.j == SETTINGS.changeBoardPart[this.inWhichPart.i][this.inWhichPart.j].j) {
 
-        }
+        // }
 
 
     }

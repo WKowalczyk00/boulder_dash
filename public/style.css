@@ -35,8 +35,8 @@
 #board {
     position: absolute;
     animation-delay: 1000ms;
-    animation-duration: 2000ms;
-    animation-name: moveSideRight;
+    animation-duration: 4000ms;
+    /* animation-name: moveSideRight; */
     animation-fill-mode: forwards;
     animation-timing-function: linear;
 }
@@ -50,8 +50,8 @@
 }
 
 .square {
-    min-width: 100px;
-    height: 100px;
+    min-width: 50px;
+    height: 50px;
     border: 1px solid black;
     display: table-cell;
 }
@@ -79,6 +79,10 @@
 /* dirt */
 .D {
     background-color: #964B00;
+}
+
+.b {
+    background-color: crimson;
 }
 
 /* exit */

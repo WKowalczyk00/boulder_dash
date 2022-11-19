@@ -97,6 +97,8 @@ export class Travel {
                 break;
             case "w":
                 return "err: you`re heading wall";
+            case "b":
+                return "err: you`re heading brick";
             case "e":
                 return "err: exit not opened yet";
             case "o":
