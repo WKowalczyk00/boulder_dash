@@ -33,12 +33,12 @@ export const SETTINGS = {
         ["w", "D", "D", "D", "D", "D", "D", "D", "e", "w"],
         ["w", "w", "w", "w", "w", "w", "w", "w", "w", "w"]
     ],
-
-    boardPart: [],
+//                 TL            TR         BL         BR
+    boardPart: [{i:14,j:25},{i:14,j:16},{i:8,j:25},{i:8,j:16}],
     // changeBoardPart: [
     //     [{ n: 0, e: 0, s: 5, w: 5 }, { n: 0, e: 3, s: 5, w: 9 }],
     //     [{ i: 5, j: 3 }, { i: 5, j: 5 }]
     // ],
     FALLING_STONE_TIME_MS: 200,
-    HOLD_KEY_TIME_MS: 100,
+    HOLD_KEY_TIME_MS: 120,
 }

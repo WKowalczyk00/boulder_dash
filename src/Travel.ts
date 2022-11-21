@@ -28,30 +28,30 @@ export class Travel {
 
     msHeld = () => {
         const interval = setInterval(() => {
-            this.time = this.time + 100
+            this.time = this.time + 20
             if (!this.isBeingHeld) {
                 clearInterval(interval)
             }
-        }, 100)
+        }, 20)
     }
 
     keyPress = async () => {
         this.position = await board.getPosition() as Position
         switch (this.event.key) {
             case "ArrowLeft":
-                await this.move(0, -1);
+                this.move(0, -1);
 
                 break;
             case "ArrowUp":
-                await this.move(-1, 0);
+                this.move(-1, 0);
 
                 break;
             case "ArrowDown":
-                await this.move(+1, 0);
+                this.move(+1, 0);
 
                 break;
             case "ArrowRight":
-                await this.move(0, 1);
+                this.move(0, 1);
 
                 break;
 
@@ -116,26 +116,16 @@ export class Travel {
 
     ifKeyIsBeingHeld = () => {
         const interval = setInterval(() => {
+            console.log("trzymanie przycisku");
+
             if (this.time >= SETTINGS.HOLD_KEY_TIME_MS && this.isBeingHeld == true) {
                 clearInterval(interval)
-                // console.log("trzymasz dluzej niz 1s", this.time);
                 changeTravel(new Travel(this.event))
             }
-        }, 100)
+            else if (this.isBeingHeld == false) {
+                clearInterval(interval)
+            }
+        }, 20)
 
     }
-
-    //sprawdzanie pozycji gracza na tablicy
-    // getPosition = async () => {
-    //     for (let i = 0; i < SETTINGS.board.length; i++) {
-    //         for (let j = 0; j < SETTINGS.board[i].length; j++) {
-    //             if (SETTINGS.board[i][j] == "X") {
-    //                 this.position = { i: i, j: j }
-    //                 return this.position
-    //             }
-
-    //         }
-    //     }
-    // }
-
 }

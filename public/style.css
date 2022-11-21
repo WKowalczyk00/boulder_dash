@@ -12,20 +12,29 @@
 }
 
 #gameElements {
-    width: 800px;
-    height: 550px;
+    width: 1200px;
+    height: 640px;
     position: absolute;
     background-color: azure;
     top: 50%;
     left: 50%;
-    margin-left: -400px;
-    margin-top: -450px;
+    margin-left: -600px;
+    margin-top: -350px;
 
     overflow: hidden;
 }
 
 #numbersPanel {
+    width: 1200px;
     height: 50px;
+    position: absolute;
+    background-color: azure;
+    top: 50%;
+    left: 50%;
+    margin-left: -600px;
+    margin-top: -420px;
+
+    overflow: hidden;
 }
 
 #boardPosistion {
@@ -34,8 +43,8 @@
 
 #board {
     position: absolute;
-    animation-delay: 1000ms;
-    animation-duration: 4000ms;
+    /* animation-delay: 1000ms; */
+    animation-duration: 500ms;
     /* animation-name: moveSideRight; */
     animation-fill-mode: forwards;
     animation-timing-function: linear;
@@ -50,10 +59,11 @@
 }
 
 .square {
-    min-width: 50px;
-    height: 50px;
+    min-width: 40px;
+    height: 40px;
     border: 1px solid black;
     display: table-cell;
+    font-size: small;
 }
 
 /* wall */
@@ -98,5 +108,38 @@
     to {
         left: 100%;
         transform: translateX(-100%);
+    }
+}
+
+@keyframes moveSideLeft {
+    from {
+        left: 100%;
+        transform: translateX(-100%);
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+@keyframes moveSideBottom {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: 100%;
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes moveSideTop {
+    from {
+        top: 100%;
+        transform: translateY(-100%);
+    }
+
+    to {
+        top: 0;
     }
 }
