@@ -69,7 +69,9 @@
 
 /* wall */
 .w {
-    background-color: #222222;
+    /* background-color: #222222; */
+    background-image: url("img/w.png");
+
 }
 
 /* point */
@@ -92,12 +94,14 @@
 
 /* dirt */
 .D {
-    background-color: #964B00;
+    /* background-color: #964B00; */
     background-image: url("img/D.png");
 }
 
 .b {
-    background-color: crimson;
+    background-image: url("img/b.png");
+
+    /* background-color: crimson; */
 }
 
 /* exit */
