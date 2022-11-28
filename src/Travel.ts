@@ -116,7 +116,7 @@ export class Travel {
 
     ifKeyIsBeingHeld = () => {
         const interval = setInterval(() => {
-            console.log("trzymanie przycisku");
+            // console.log("trzymanie przycisku");
 
             if (this.time >= SETTINGS.HOLD_KEY_TIME_MS && this.isBeingHeld == true) {
                 clearInterval(interval)

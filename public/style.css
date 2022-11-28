@@ -43,11 +43,12 @@
 
 #board {
     position: absolute;
-    /* animation-delay: 1000ms; */
     animation-duration: 500ms;
-    /* animation-name: moveSideRight; */
     animation-fill-mode: forwards;
     animation-timing-function: linear;
+    /* transform: translate(-100%); */
+    left: 0;
+    top: 0;
 }
 
 .row {

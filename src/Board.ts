@@ -11,7 +11,7 @@ export class Board {
     }
     create = async () => {
         this.position = await this.getPosition() as Position
-        if (this.position.i!=-1)
+        if (this.position.i != -1)
             this.getBoardPart();
         const BOARD = SETTINGS.board
         const boardDiv = document.getElementById("board")
@@ -36,7 +36,7 @@ export class Board {
 
     getBoardPart = async () => {
         const playerPositon = await this.getPosition() as Position
-        console.log(playerPositon.i);
+        // console.log(playerPositon.i);
         // zmiana e - w
         if (playerPositon.j == SETTINGS.boardPart[this.inWhichPart].j) {
             console.log("zmiana e - w");
@@ -44,20 +44,42 @@ export class Board {
             if (this.inWhichPart % 2 == 0) {
                 console.log("na granicy zmiany pozycji w strone prawa");
                 const boardDiv = document.getElementById("board") as HTMLElement
-                boardDiv.style.animationName = "moveSideRight"
-                if (this.inWhichPart == 0)
+
+                if (this.inWhichPart == 0) {
+                    console.log("gorne prawo");
+                    boardDiv.style.top = '0px'
+                    // boardDiv.style.top = '100%'
+                    // boardDiv.style.transform = 'translateY(-100%)'
+
+
                     this.inWhichPart = 1
-                else if (this.inWhichPart == 2)
+                }
+                else if (this.inWhichPart == 2) {
+                    console.log("dolne prawo");
+                    boardDiv.style.top = '-240px'
+                    // boardDiv.style.transform = 'translateY(0%)'
+                    // boardDiv.style.transform = 'translateZ(0%)'
+                    // top: 100%;
+                    // transform: translateY(-100%);
                     this.inWhichPart = 3
+                }
+                // await travel.timeout(1000)
+                boardDiv.style.animationName = "moveSideRight"
             }
             else {
                 console.log("na granicy zmiany pozycji w strone lewa");
                 const boardDiv = document.getElementById("board") as HTMLElement
                 boardDiv.style.animationName = "moveSideLeft"
-                if (this.inWhichPart == 1)
+                if (this.inWhichPart == 1) {
+
+                    boardDiv.style.top = '0px'
                     this.inWhichPart = 0
-                else if (this.inWhichPart == 3)
+                }
+                else if (this.inWhichPart == 3) {
+
+                    boardDiv.style.top = '-240px'
                     this.inWhichPart = 2
+                }
             }
 
         }
@@ -68,19 +90,29 @@ export class Board {
                 console.log("na granicy zmiany pozycji w strone dol");
                 const boardDiv = document.getElementById("board") as HTMLElement
                 boardDiv.style.animationName = "moveSideBottom"
-                if (this.inWhichPart == 0)
+                if (this.inWhichPart == 0) {
+                    boardDiv.style.left = '0px'
                     this.inWhichPart = 2
-                else if (this.inWhichPart == 1)
+                }
+                else if (this.inWhichPart == 1) {
+                    boardDiv.style.left = '-400px'
                     this.inWhichPart = 3
+                }
             }
             else {
                 console.log("na granicy zmiany pozycji w strone gora");
                 const boardDiv = document.getElementById("board") as HTMLElement
                 boardDiv.style.animationName = "moveSideTop"
-                if (this.inWhichPart == 2)
+                if (this.inWhichPart == 2) {
                     this.inWhichPart = 0
-                else if (this.inWhichPart == 3)
+                    boardDiv.style.left = '0px'
+                }
+
+                else if (this.inWhichPart == 3) {
+                    boardDiv.style.left = '-400px'
                     this.inWhichPart = 1
+                }
+
             }
         }
 
