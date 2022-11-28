@@ -115,17 +115,20 @@ export class Travel {
     }
 
     ifKeyIsBeingHeld = () => {
-        const interval = setInterval(() => {
-            // console.log("trzymanie przycisku");
+        // const interval = setInterval(() => {
+        // console.log("trzymanie przycisku");
 
-            if (this.time >= SETTINGS.HOLD_KEY_TIME_MS && this.isBeingHeld == true) {
-                clearInterval(interval)
-                changeTravel(new Travel(this.event))
-            }
-            else if (this.isBeingHeld == false) {
-                clearInterval(interval)
-            }
-        }, 20)
+        if (this.time >= SETTINGS.HOLD_KEY_TIME_MS && this.isBeingHeld == true) {
+            // clearInterval(interval)
+            changeTravel(new Travel(this.event))
+        }
+        else if (this.isBeingHeld == false) {
+            // clearInterval(interval)
+        }
+        else {
+            window.requestAnimationFrame(this.ifKeyIsBeingHeld)
+        }
+        // }, 20)
 
     }
 }

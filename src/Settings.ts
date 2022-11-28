@@ -35,6 +35,6 @@ export const SETTINGS = {
     ],
 //                 TL            TR         BL         BR
     boardPart: [{i:14,j:25},{i:14,j:16},{i:8,j:25},{i:8,j:16}],
-    FALLING_STONE_TIME_MS: 200,
-    HOLD_KEY_TIME_MS: 120,
+    FALLING_STONE_TIME_MS: 250,
+    HOLD_KEY_TIME_MS: 125,
 }

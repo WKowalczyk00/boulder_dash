@@ -15,7 +15,7 @@
     width: 1200px;
     height: 640px;
     position: absolute;
-    background-color: azure;
+    /* background-color: azure; */
     top: 50%;
     left: 50%;
     margin-left: -600px;
@@ -62,7 +62,7 @@
 .square {
     min-width: 40px;
     height: 40px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: table-cell;
     font-size: small;
 }
@@ -79,17 +79,21 @@
 
 /* stone */
 .s {
-    background-color: slategray;
+    /* background-color: slategray; */
+    background-image: url("img/s.png");
+
 }
 
 /* player */
 .X {
-    background-color: #77fa0c;
+    /* background-color: #77fa0c; */
+    background-image: url("img/X.png");
 }
 
 /* dirt */
 .D {
     background-color: #964B00;
+    background-image: url("img/D.png");
 }
 
 .b {
