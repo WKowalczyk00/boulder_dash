@@ -1,4 +1,4 @@
-import { travel, Position } from "./index";
+import { travel, valuesBoard, Position } from "./index";
 import { SETTINGS } from "./Settings";
 
 export class Board {
@@ -10,6 +10,9 @@ export class Board {
         this.create();
     }
     create = async () => {
+        valuesBoard.asignValues();
+
+
         this.position = await this.getPosition() as Position
         if (this.position.i != -1)
             this.getBoardPart();
@@ -27,7 +30,7 @@ export class Board {
                 const td = document.createElement("div")
                 td.classList.add("square")
                 tr.appendChild(td)
-                td.innerHTML = i + "_" + j
+                // td.innerHTML = i + "_" + j
                 td.className += " " + BOARD[i][j];
                 // td.classList.add(BOARD[i][j])
             }

@@ -1,5 +1,5 @@
 import { SETTINGS } from "./Settings";
-import { board, travel, Position, changeTravel } from "./index";
+import { board, travel, Position, changeTravel,valuesBoard } from "./index";
 import { FallingObjects } from "./travelChildren/FallingObjects"
 
 export class Travel {
@@ -72,8 +72,10 @@ export class Travel {
                 this.ifKeyIsBeingHeld();
                 break;
             case "p":
-                const points = document.getElementById("points") as HTMLElement
-                points.innerHTML = JSON.stringify(parseInt(points?.innerHTML) + 1)
+                // valuesBoard.points++;
+                valuesBoard.addPoint();
+                // const points = document.getElementById("points") as HTMLElement
+                // points.innerHTML = JSON.stringify(parseInt(points?.innerHTML) + 1)
 
                 SETTINGS.board[this.position.i][this.position.j] = ""
                 SETTINGS.board[this.position.i + mI][this.position.j + mJ] = "X"

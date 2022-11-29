@@ -25,16 +25,19 @@ export const SETTINGS = {
     ,
     board2: [
         ["w", "w", "w", "w", "w", "w", "w", "w", "w", "w"],
-        ["w", "s", "D", "p", "s", "D", "", "", "p", "w"],
-        ["w", "D", "X", "D", "s", "b", "D", "s", "", "w"],
-        ["w", "b", "D", "D", "D", "D", "p", "D", "", "w"],
-        ["w", "D", "s", "D", "s", "", "D", "s", "D", "w"],
-        ["w", "D", "D", "D", "", "", "D", "D", "", "w"],
-        ["w", "D", "D", "D", "D", "D", "D", "D", "e", "w"],
+        ["w", "s", "D", "", "s", "D", "s", "", "p", "w"],
+        ["w", "D", "X", "D", "s", "s", "s", "s", "", "w"],
+        ["w", "b", "D", "D", "s", "D", "s", "D", "", "w"],
+        ["w", "D", "s", "D", "s", "", "s", "s", "D", "w"],
+        ["w", "D", "D", "D", "D", "", "D", "D", "", "w"],
+        ["w", "D", "D", "D", "D", "", "D", "D", "e", "w"],
         ["w", "w", "w", "w", "w", "w", "w", "w", "w", "w"]
     ],
-//                 TL            TR         BL         BR
-    boardPart: [{i:14,j:25},{i:14,j:16},{i:8,j:25},{i:8,j:16}],
-    FALLING_STONE_TIME_MS: 250,
-    HOLD_KEY_TIME_MS: 125,
+    //                 TL            TR         BL         BR
+    boardPart: [{ i: 14, j: 25 }, { i: 14, j: 16 }, { i: 8, j: 25 }, { i: 8, j: 16 }],
+    FALLING_STONE_TIME_MS: 250, // time in which stone is falling
+    HOLD_KEY_TIME_MS: 125, //time to next move while holding key
+    timerStart: 150, //strart of the timer in seconds
+    scoreForPoint: 10, //amount of score per point 
+    levelClear:5, //amount of points needed to clear level
 }

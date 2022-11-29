@@ -24,17 +24,80 @@
     overflow: hidden;
 }
 
+#gameLost {
+    width: 1200px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -600px;
+    margin-top: -420px;
+    background-color: black;
+    font-family: myFont;
+    font-size: 60px;
+    z-index: 5;
+    display: none;
+    color: red;
+    text-align: center;
+}
+
 #numbersPanel {
     width: 1200px;
     height: 50px;
     position: absolute;
-    background-color: azure;
+    /* background-color: azure; */
     top: 50%;
     left: 50%;
     margin-left: -600px;
     margin-top: -420px;
 
-    overflow: hidden;
+    font-family: myFont;
+    font-size: 60px;
+
+    /* overflow: hidden; */
+}
+
+#numbersPanel>* {
+    display: inline-block;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+
+    /* margin-right: 200px; */
+    /* left: 100px; */
+}
+
+#purpose {
+    margin-left: 3px;
+    width: 280px;
+    color: gold;
+}
+
+#purpose>* {
+
+    display: inline-block;
+}
+
+#diamond {
+    width: 35px;
+    height: 20px;
+    background-image: url("./img/diamond.png");
+}
+
+#points {
+    width: 240px;
+    color: gold;
+}
+
+#timer {
+    width: 240px;
+    color: white;
+}
+
+#score {
+    width: 360px;
+    color: white;
+    float: right;
 }
 
 #boardPosistion {
@@ -46,7 +109,6 @@
     animation-duration: 500ms;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
-    /* transform: translate(-100%); */
     left: 0;
     top: 0;
 }
@@ -62,7 +124,6 @@
 .square {
     min-width: 40px;
     height: 40px;
-    /* border: 1px solid black; */
     display: table-cell;
     font-size: small;
 }
@@ -76,7 +137,8 @@
 
 /* point */
 .p {
-    background-color: yellow;
+    /* background-color: yellow; */
+    background-image: url("./img/p.png");
 }
 
 /* stone */
@@ -151,4 +213,9 @@
     to {
         top: 0;
     }
+}
+
+@font-face {
+    font-family: myFont;
+    src: url("./font/Boulder\ Dash\ 6128.ttf");
 }
