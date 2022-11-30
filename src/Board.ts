@@ -1,5 +1,6 @@
 import { travel, valuesBoard, Position, board } from "./index";
 import { SETTINGS } from "./Settings";
+import { FallingObjects } from "./travelChildren/FallingObjects";
 
 export class Board {
     inWhichPart: number;
@@ -7,16 +8,10 @@ export class Board {
     constructor() {
         this.inWhichPart = 0;
         this.position = { i: 0, j: 0 }
-        this.create();
+        this.createDivs();
         this.changeAnimationValues();
     }
-    create = async () => {
-        valuesBoard.asignValues();
-
-
-        this.position = await this.getPosition() as Position
-        if (this.position.i != -1)
-            this.getBoardPart();
+    createDivs = () => {
         const BOARD = SETTINGS.board
         const boardDiv = document.getElementById("board")
         boardDiv ? boardDiv.innerHTML = "" : false
@@ -31,8 +26,38 @@ export class Board {
                 const td = document.createElement("div")
                 td.classList.add("square")
                 tr.appendChild(td)
+                td.id = i + "_" + j
                 // td.innerHTML = i + "_" + j
                 td.className += " " + BOARD[i][j];
+                // td.classList.add(BOARD[i][j])
+            }
+        }
+    }
+    create = async () => {
+        valuesBoard.asignValues();
+
+
+        this.position = await this.getPosition() as Position
+        if (this.position.i != -1)
+            this.getBoardPart();
+        const BOARD = SETTINGS.board
+        const boardDiv = document.getElementById("board")
+        // boardDiv ? boardDiv.innerHTML = "" : false
+        // boardDiv?.innerHTML = ""
+        for (let i = 0; i < BOARD.length; i++) {
+            // const tr = document.createElement("div")
+            // tr.classList.add("row")
+            // boardDiv?.appendChild(tr)
+
+            // tr.innerHTML = "x"
+            for (let j = 0; j < BOARD[i].length; j++) {
+                // const td = document.createElement("div")
+                // td.classList.add("square")
+                // tr.appendChild(td)
+                // td.innerHTML = i + "_" + j
+                const td = document.getElementById(i + "_" + j) as HTMLElement
+                td.className = "square " + SETTINGS.board[i][j];
+
                 // td.classList.add(BOARD[i][j])
             }
         }
@@ -140,5 +165,7 @@ export class Board {
 
         boardDiv.style.animationDelay = "0ms"
         boardDiv.style.animationDuration = "500ms"
+        let fallingObjects = new FallingObjects();
+        fallingObjects.check();
     }
 }

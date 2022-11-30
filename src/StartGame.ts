@@ -1,6 +1,7 @@
 import { SETTINGS } from "./Settings"
 import { Position } from "./index";
 import { timeout } from "./functions";
+
 export class StartGame {
     gameLostDiv: HTMLElement = document.getElementById("gameLost") as HTMLElement;
     boardDiv: HTMLElement = document.getElementById("board") as HTMLElement;
@@ -27,6 +28,20 @@ export class StartGame {
                 counter++;
             }
         }
+
+        let x: Position;
+        let xDiv!: HTMLElement;
+        for (let i = 0; i < SETTINGS.board.length; i++) {
+            for (let j = 0; j < SETTINGS.board[i].length; j++) {
+                if (SETTINGS.board[i][j] == "X") {
+                    x = { i: i, j: j }
+                    SETTINGS.board[i][j] = ""
+                    xDiv = document.getElementById(i + "_" + j) as HTMLElement
+                }
+
+            }
+        }
+
         this.startAnimation()
         array.forEach(async (e, i) => {
             (function (index) {
@@ -36,6 +51,8 @@ export class StartGame {
                 }, i * 3);
             })(i);
         });
+        await this.walkingGuy(xDiv);
+
 
     }
     startAnimation = async () => {
@@ -55,6 +72,30 @@ export class StartGame {
         this.shuffle(arr)
         await this.createBoard(arr)
 
+    }
+    walkingGuy = async (xDiv: HTMLElement) => {
+        for (let i = 0; i < 8; i++) {
+            (function (index) {
+                setTimeout(function () {
+                    if (i % 2 == 0)
+                        xDiv.className = "square w";
+                    else
+                        xDiv.className = "square";
+                }, i * 500);
+            })(i);
+        }
+        await timeout(4000)
+
+        xDiv.className = "square boom1"
+        console.log("boom1");
+
+        await timeout(300)
+        xDiv.className = "square boom2"
+        console.log("boom2");
+        await timeout(300)
+        // xDiv.className = "square X";
+        SETTINGS.board = SETTINGS.boardBackup
+        
     }
     shuffle = (array: Position[]) => {
         let currentIndex = array.length, randomIndex;

@@ -173,6 +173,14 @@
     background-color: blue;
 }
 
+.boom1 {
+    background-image: url("img/boom1.png");
+}
+
+.boom2 {
+    background-image: url("img/boom2.png");
+}
+
 @keyframes moveSideRight {
     from {
         left: 0;
@@ -225,10 +233,10 @@
 
     to {
         left: 0px;
-        top:0px;
-            /* right:-1000px;
+        top: 0px;
+        /* right:-1000px;
         bottom: -240px; */
-            /* transform: translate(100%); */
+        /* transform: translate(100%); */
     }
 }
 
