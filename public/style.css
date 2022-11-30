@@ -106,11 +106,13 @@
 
 #board {
     position: absolute;
-    animation-duration: 500ms;
+    animation-duration: 2500ms;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
-    left: 0;
-    top: 0;
+
+    /* animation-name: startGame; */
+
+
 }
 
 .row {
@@ -212,6 +214,21 @@
 
     to {
         top: 0;
+    }
+}
+
+@keyframes startGame {
+    from {
+        left: -400px;
+        top: -240px
+    }
+
+    to {
+        left: 0px;
+        top:0px;
+            /* right:-1000px;
+        bottom: -240px; */
+            /* transform: translate(100%); */
     }
 }
 

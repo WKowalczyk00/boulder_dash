@@ -1,4 +1,4 @@
-import { travel, valuesBoard, Position } from "./index";
+import { travel, valuesBoard, Position, board } from "./index";
 import { SETTINGS } from "./Settings";
 
 export class Board {
@@ -8,6 +8,7 @@ export class Board {
         this.inWhichPart = 0;
         this.position = { i: 0, j: 0 }
         this.create();
+        this.changeAnimationValues();
     }
     create = async () => {
         valuesBoard.asignValues();
@@ -132,5 +133,12 @@ export class Board {
             }
         }
         return { i: -1, j: -1 }
+    }
+    changeAnimationValues = () => {
+        const boardDiv = document.getElementById("board") as HTMLElement
+
+
+        boardDiv.style.animationDelay = "0ms"
+        boardDiv.style.animationDuration = "500ms"
     }
 }

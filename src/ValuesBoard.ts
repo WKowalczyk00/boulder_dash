@@ -14,15 +14,23 @@ export class ValuesBoard {
     pointsDiv: HTMLElement = document.getElementById("points") as HTMLElement;
     timerDiv: HTMLElement = document.getElementById("timer") as HTMLElement;
     scoreDiv: HTMLElement = document.getElementById("score") as HTMLElement;
+    gameLostDiv: HTMLElement = document.getElementById("gameLost") as HTMLElement;
 
-    interval: NodeJS.Timer = setInterval(()=>{});
+    interval: NodeJS.Timer = setInterval(() => { });
     constructor() {
+        this.showPanel();
         this.asignValues();
         this.timerChangeValue();
     }
 
+    showPanel = () => {
+        this.gameLostDiv.style.display = "none"
+        this.gameLostDiv.style.color = "red"
+        this.gameLostDiv.innerHTML = ""
+    }
+
     asignValues = () => {
-        
+
         this.printValues();
     }
 

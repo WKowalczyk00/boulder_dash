@@ -2,21 +2,24 @@ import { SETTINGS } from "./Settings"
 import { Board } from "./Board"
 import { Travel } from "./Travel"
 import { ValuesBoard } from "./ValuesBoard"
+import { StartGame } from "./StartGame"
+import { timeout } from "./functions"
 console.table(SETTINGS.board);
 
 type Position = { i: number, j: number }
 let board: Board;
 let travel: Travel;
 let valuesBoard: ValuesBoard;
+let startGame: StartGame;
 
 let keyup: (e: KeyboardEvent) => void;
 let keydown: (e: KeyboardEvent) => void;
 window.onload = async () => {
-    //stworzanie obiektu dla klasy board do ktorego mozna sie odwolac w innych plikach 
 
+    startGame = new StartGame();
+    await timeout(5000)
     valuesBoard = new ValuesBoard();
     board = new Board();
-    //tworzenie 
 
     keydown = (e: KeyboardEvent) => {
         //is being held
