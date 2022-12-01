@@ -84,15 +84,18 @@ export class StartGame {
                 }, i * 500);
             })(i);
         }
-        await timeout(4500)
+        await timeout(4400)
 
         xDiv.className = "square boom1"
         console.log("boom1");
 
-        await timeout(250)
+        await timeout(200)
         xDiv.className = "square boom2"
         console.log("boom2");
-        await timeout(250)
+        await timeout(200)
+        xDiv.className = "square boom3"
+        console.log("boom3");
+        await timeout(200)
         // xDiv.className = "square X";
         SETTINGS.board = SETTINGS.boardBackup
         

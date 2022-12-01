@@ -111,7 +111,7 @@
     animation-timing-function: linear;
 
     /* animation-name: startGame; */
-
+    /* background-color: white; */
 
 }
 
@@ -140,7 +140,7 @@
 /* point */
 .p {
     /* background-color: yellow; */
-    background-image: url("./img/p.png");
+    background-image: url("./img/point.gif");
 }
 
 /* stone */
@@ -179,6 +179,10 @@
 
 .boom2 {
     background-image: url("img/boom2.png");
+}
+
+.boom3 {
+    background-image: url("img/boom3.png");
 }
 
 @keyframes moveSideRight {
