@@ -74,7 +74,7 @@ export class StartGame {
 
     }
     walkingGuy = async (xDiv: HTMLElement) => {
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < 9; i++) {
             (function (index) {
                 setTimeout(function () {
                     if (i % 2 == 0)
@@ -84,15 +84,15 @@ export class StartGame {
                 }, i * 500);
             })(i);
         }
-        await timeout(4000)
+        await timeout(4500)
 
         xDiv.className = "square boom1"
         console.log("boom1");
 
-        await timeout(300)
+        await timeout(250)
         xDiv.className = "square boom2"
         console.log("boom2");
-        await timeout(300)
+        await timeout(250)
         // xDiv.className = "square X";
         SETTINGS.board = SETTINGS.boardBackup
         
