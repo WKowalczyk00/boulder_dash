@@ -1,5 +1,6 @@
 import { SETTINGS } from "../Settings";
 import { board, Position, keydown, keyup, valuesBoard } from "../index";
+import { gameEnd } from "../functions";
 export class FallingObjects {
     itemPosition: Position;
     itemType: string;
@@ -87,9 +88,7 @@ export class FallingObjects {
         if (SETTINGS.board[i + 1][j] == "X" && wasFalling == true) {
             await this.timeout(SETTINGS.FALLING_STONE_TIME_MS)
             if (SETTINGS.board[i + 1][j] == "X" && SETTINGS.board[i][j] == type) {
-                document.removeEventListener("keydown", keydown)
-                document.removeEventListener("keyup", keyup)
-                clearInterval(valuesBoard.interval)
+                gameEnd();
                 SETTINGS.board[i + 1][j] = ""
                 SETTINGS.board[i + 2][j + 1] = ""
                 SETTINGS.board[i + 2][j - 1] = ""

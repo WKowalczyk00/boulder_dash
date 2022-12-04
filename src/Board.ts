@@ -1,6 +1,7 @@
 import { travel, valuesBoard, Position, board } from "./index";
 import { SETTINGS } from "./Settings";
 import { FallingObjects } from "./travelChildren/FallingObjects";
+import { timeout } from "./functions"
 
 export class Board {
     inWhichPart: number;
@@ -41,24 +42,11 @@ export class Board {
         if (this.position.i != -1)
             this.getBoardPart();
         const BOARD = SETTINGS.board
-        const boardDiv = document.getElementById("board")
-        // boardDiv ? boardDiv.innerHTML = "" : false
-        // boardDiv?.innerHTML = ""
-        for (let i = 0; i < BOARD.length; i++) {
-            // const tr = document.createElement("div")
-            // tr.classList.add("row")
-            // boardDiv?.appendChild(tr)
 
-            // tr.innerHTML = "x"
+        for (let i = 0; i < BOARD.length; i++) {
             for (let j = 0; j < BOARD[i].length; j++) {
-                // const td = document.createElement("div")
-                // td.classList.add("square")
-                // tr.appendChild(td)
-                // td.innerHTML = i + "_" + j
                 const td = document.getElementById(i + "_" + j) as HTMLElement
                 td.className = "square " + SETTINGS.board[i][j];
-
-                // td.classList.add(BOARD[i][j])
             }
         }
     }
@@ -167,5 +155,24 @@ export class Board {
         boardDiv.style.animationDuration = "500ms"
         let fallingObjects = new FallingObjects();
         fallingObjects.check();
+    }
+
+    openExit = async () => {
+        for (let i = 0; i < SETTINGS.board.length; i++) {
+            for (let j = 0; j < SETTINGS.board[i].length; j++) {
+                if (SETTINGS.board[i][j] == "e") {
+                    SETTINGS.board[i][j] = "o"
+                }
+
+            }
+        }
+        const board = document.getElementById("board") as HTMLElement
+        board.style.backgroundColor = "white"
+        await timeout(100)
+        board.style.backgroundColor = "black"
+        
+
+        this.create();
+
     }
 }

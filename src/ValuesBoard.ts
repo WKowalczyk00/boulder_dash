@@ -1,5 +1,6 @@
 import { SETTINGS } from "./Settings";
 import { board, travel, Position, changeTravel, keydown, keyup } from "./index";
+import { gameEnd } from "./functions";
 
 export class ValuesBoard {
     pointsPerNextLevel: number = SETTINGS.levelClear;
@@ -37,6 +38,10 @@ export class ValuesBoard {
     addPoint = () => {
         this.points++;
         this.score = this.points * this.pointValue
+
+        if (this.points == this.pointsPerNextLevel) {
+            board.openExit();
+        }
     }
 
     printValues = () => {
@@ -65,7 +70,7 @@ export class ValuesBoard {
             this.timer--;
             this.printValues();
             if (this.timer == 0) {
-                clearInterval(this.interval)
+                // clearInterval(this.interval)
                 console.log("przegrana - koniec czasu");
                 this.lostByTime();
             }
@@ -73,8 +78,7 @@ export class ValuesBoard {
     }
 
     lostByTime = async () => {
-        document.removeEventListener("keydown", keydown)
-        document.removeEventListener("keyup", keyup)
+        gameEnd()
         const gameLostDiv = document.getElementById("gameLost") as HTMLElement
         let position: Position;
         for (let i = 0; i < 5; i++) {
@@ -105,6 +109,28 @@ export class ValuesBoard {
 
     timeout = (ms: number) => {
         return new Promise(resolve => setTimeout(resolve, ms))
+    }
+    giveTimePoints = async () => {
+        // this.timer;
+        const myInterval = setInterval(async () => {
+            this.timer--;
+            this.score++;
+            this.printValues();
+            if (this.timer == 0) {
+                clearInterval(myInterval)
+            }
+        }, 15)
+
+        await this.timeout(5000)
+        const gameLostDiv = document.getElementById("gameLost") as HTMLElement
+        for (let i = 0; i < 5; i++) {
+            gameLostDiv.style.display = "block"
+            gameLostDiv.style.backgroundColor = "gold"
+            gameLostDiv.innerHTML = "gratulacje, wygrana :)))"
+            await this.timeout(1000)
+            gameLostDiv.style.display = "none"
+            await this.timeout(1000)
+        }
     }
 
 }

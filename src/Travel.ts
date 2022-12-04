@@ -1,6 +1,7 @@
 import { SETTINGS } from "./Settings";
-import { board, travel, Position, changeTravel,valuesBoard } from "./index";
+import { board, travel, Position, changeTravel, valuesBoard } from "./index";
 import { FallingObjects } from "./travelChildren/FallingObjects"
+import { gameEnd } from "./functions"
 
 export class Travel {
     event: KeyboardEvent;
@@ -104,6 +105,12 @@ export class Travel {
             case "e":
                 return "err: exit not opened yet";
             case "o":
+                SETTINGS.board[this.position.i][this.position.j] = ""
+                SETTINGS.board[this.position.i + mI][this.position.j + mJ] = "X"
+                gameEnd();
+                valuesBoard.giveTimePoints();
+                console.log("wygrales gre, gratulacje");
+
                 break;
 
         }

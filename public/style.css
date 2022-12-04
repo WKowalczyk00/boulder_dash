@@ -170,7 +170,11 @@
 
 /* exit */
 .e {
-    background-color: blue;
+    background-image: url("img/w.png");
+}
+
+.o{
+    background-image: url("img/o.png");
 }
 
 .boom1 {
