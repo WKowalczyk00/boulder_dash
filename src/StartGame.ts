@@ -43,6 +43,9 @@ export class StartGame {
         }
 
         this.startAnimation()
+        var audio = new Audio('sounds/open-game.mp3');
+        audio.play();
+
         array.forEach(async (e, i) => {
             (function (index) {
                 setTimeout(function () {
@@ -58,7 +61,7 @@ export class StartGame {
     startAnimation = async () => {
         this.gameLostDiv.style.display = "block"
         this.gameLostDiv.style.color = "white"
-        this.gameLostDiv.innerHTML = "Player1, 3 men ,cave A/1"
+        this.gameLostDiv.innerHTML = "Player1, 1 men ,cave A/1"
         this.boardDiv.style.animationName = "startGame"
 
     }
@@ -98,7 +101,7 @@ export class StartGame {
         await timeout(200)
         // xDiv.className = "square X";
         SETTINGS.board = SETTINGS.boardBackup
-        
+
     }
     shuffle = (array: Position[]) => {
         let currentIndex = array.length, randomIndex;

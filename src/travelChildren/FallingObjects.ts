@@ -40,6 +40,16 @@ export class FallingObjects {
                 SETTINGS.board[i][j] = ""
                 SETTINGS.board[i + 1][j] = type
 
+                if (SETTINGS.board[i + 2][j] != "" && type == "s") {
+                    await this.timeout(SETTINGS.FALLING_STONE_TIME_MS / 2)
+                    var audio = new Audio('sounds/stone-fall.mp3');
+                    audio.play();
+                }
+                else if (SETTINGS.board[i + 2][j] != "" && type == "p") { 
+                    // await this.timeout(SETTINGS.FALLING_STONE_TIME_MS / 2)
+                    var audio = new Audio('sounds/point-fall.mp3');
+                    audio.play();
+                }
 
                 this.itemCheck(i + 1, j, type, SETTINGS.FALLING_STONE_TIME_MS, true)
                 this.check();
@@ -83,6 +93,7 @@ export class FallingObjects {
 
             }
         }
+
 
         //przegrana spadek na leb
         if (SETTINGS.board[i + 1][j] == "X" && wasFalling == true) {

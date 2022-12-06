@@ -173,8 +173,16 @@
     background-image: url("img/w.png");
 }
 
-.o{
+.o {
     background-image: url("img/o.png");
+}
+
+.movingLeft {
+    background-image: url("img/movingLeft.gif");
+}
+
+.movingRight {
+    background-image: url("img/movingRight.gif");
 }
 
 .boom1 {

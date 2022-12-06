@@ -33,6 +33,8 @@ export class Board {
                 // td.classList.add(BOARD[i][j])
             }
         }
+        var audio = new Audio('sounds/show-player.mp3');
+        audio.play();
     }
     create = async () => {
         valuesBoard.asignValues();

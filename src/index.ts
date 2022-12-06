@@ -14,8 +14,8 @@ let startGame: StartGame;
 
 let keyup: (e: KeyboardEvent) => void;
 let keydown: (e: KeyboardEvent) => void;
-window.onload = async () => {
 
+const gameStart = async () => {
     startGame = new StartGame();
     await timeout(5000)
     valuesBoard = new ValuesBoard();
@@ -34,6 +34,17 @@ window.onload = async () => {
         document.addEventListener("keydown", keydown)
     }
     document.addEventListener("keydown", keydown)
+}
+
+
+window.onload = async () => {
+    const startGameFunction = async (e: KeyboardEvent) => {
+        if (e.key == "Enter") {
+            gameStart()
+            window.removeEventListener("keydown", startGameFunction)
+        }
+    }
+    window.addEventListener("keydown", startGameFunction)
 }
 
 const changeTravel = (newTravel: Travel) => {

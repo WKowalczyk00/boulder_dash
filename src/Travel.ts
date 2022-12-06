@@ -71,6 +71,9 @@ export class Travel {
                 SETTINGS.board[this.position.i][this.position.j] = ""
                 SETTINGS.board[this.position.i + mI][this.position.j + mJ] = "X"
                 this.ifKeyIsBeingHeld();
+                
+                var audio = new Audio('sounds/move.mp3');
+                audio.play();
                 break;
             case "p":
                 // valuesBoard.points++;
@@ -123,18 +126,23 @@ export class Travel {
 
     }
 
-    ifKeyIsBeingHeld = () => {
-        // const interval = setInterval(() => {
-        // console.log("trzymanie przycisku");
+    ifKeyIsBeingHeld = async () => {
 
+        const position = await board.getPosition() as Position
+        const xClass = document.getElementById(position.i + "_" + position.j) as HTMLElement
         if (this.time >= SETTINGS.HOLD_KEY_TIME_MS && this.isBeingHeld == true) {
-            // clearInterval(interval)
+            // xClass.className = "square x";
             changeTravel(new Travel(this.event))
         }
         else if (this.isBeingHeld == false) {
-            // clearInterval(interval)
+            xClass.className = "square X";
         }
         else {
+            if (this.event.key == "ArrowRight" || this.event.key == "ArrowDown")
+                xClass.className = "square X movingRight";
+            else if (this.event.key == "ArrowUp" || this.event.key == "ArrowLeft") {
+                xClass.className = "square X movingLeft";
+            }
             window.requestAnimationFrame(this.ifKeyIsBeingHeld)
         }
         // }, 20)
