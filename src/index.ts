@@ -40,6 +40,8 @@ const gameStart = async () => {
 window.onload = async () => {
     const startGameFunction = async (e: KeyboardEvent) => {
         if (e.key == "Enter") {
+            const moveLegendDiv = document.getElementById("moveLegend") as HTMLElement
+            moveLegendDiv.style.display = "none"
             gameStart()
             window.removeEventListener("keydown", startGameFunction)
         }

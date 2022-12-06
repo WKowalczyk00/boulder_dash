@@ -41,6 +41,9 @@ export class ValuesBoard {
 
         if (this.points == this.pointsPerNextLevel) {
             board.openExit();
+
+            var audio = new Audio('sounds/open-gate.mp3');
+            audio.play();
         }
     }
 
@@ -91,6 +94,11 @@ export class ValuesBoard {
         await this.timeout(500)
         position = await board.getPosition();
         this.destroyAround(position.i, position.j)
+
+        var audio = new Audio('sounds/stone-fall.mp3');
+        audio.play();
+        // await this.timeout(5000)
+
     }
 
     destroyAround = (i: number, j: number) => {

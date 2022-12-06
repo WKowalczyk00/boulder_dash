@@ -197,6 +197,55 @@
     background-image: url("img/boom3.png");
 }
 
+
+#moveLegend {
+    background-color: black;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    text-align: center;
+    /* display: none; */
+}
+
+#img {
+    filter: invert(1);
+    /* height: 250px; */
+    width: 400px;
+    /* height: 50px; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -420px;
+}
+
+#moveLegend>* {
+    font-family: myFont;
+    font-size: 60px;
+}
+
+#text {
+    color: gold;
+    width: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -500px;
+    margin-top: -100px;
+}
+
+#text2 {
+    color: white;
+    width: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -500px;
+    margin-top: 200px;
+    font-size: 80px;
+}
+
 @keyframes moveSideRight {
     from {
         left: 0;

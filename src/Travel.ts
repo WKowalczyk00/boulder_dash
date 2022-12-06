@@ -71,7 +71,7 @@ export class Travel {
                 SETTINGS.board[this.position.i][this.position.j] = ""
                 SETTINGS.board[this.position.i + mI][this.position.j + mJ] = "X"
                 this.ifKeyIsBeingHeld();
-                
+
                 var audio = new Audio('sounds/move.mp3');
                 audio.play();
                 break;
@@ -84,19 +84,25 @@ export class Travel {
                 SETTINGS.board[this.position.i][this.position.j] = ""
                 SETTINGS.board[this.position.i + mI][this.position.j + mJ] = "X"
                 this.ifKeyIsBeingHeld();
+
+                var audio = new Audio('sounds/get-point.mp3');
+                audio.play();
                 break;
             case "s":
                 if (SETTINGS.board[this.position.i][this.position.j + mJ * 2] != "")
                     return "err: can`t push stone"
-                await this.timeout(1500)
+                await this.timeout(1000)
 
-                if (this.time >= 1500) {
+                if (this.time >= 1000) {
                     if (SETTINGS.board[this.position.i + mI][this.position.j + mJ] != "s") {
                         return "err: stone disappeared"
                     }
                     SETTINGS.board[this.position.i][this.position.j] = ""
                     SETTINGS.board[this.position.i + mI][this.position.j + mJ] = "X"
                     SETTINGS.board[this.position.i][this.position.j + mJ * 2] = "s"
+                    var audio = new Audio('sounds/stone-fall.mp3');
+                    audio.play();
+                    this.ifKeyIsBeingHeld();
                 }
                 else
                     return "err: pushing stone no more"
@@ -112,6 +118,8 @@ export class Travel {
                 SETTINGS.board[this.position.i + mI][this.position.j + mJ] = "X"
                 gameEnd();
                 valuesBoard.giveTimePoints();
+                var audio = new Audio('sounds/points-flow.mp3');
+                audio.play();
                 console.log("wygrales gre, gratulacje");
 
                 break;
@@ -131,7 +139,6 @@ export class Travel {
         const position = await board.getPosition() as Position
         const xClass = document.getElementById(position.i + "_" + position.j) as HTMLElement
         if (this.time >= SETTINGS.HOLD_KEY_TIME_MS && this.isBeingHeld == true) {
-            // xClass.className = "square x";
             changeTravel(new Travel(this.event))
         }
         else if (this.isBeingHeld == false) {
