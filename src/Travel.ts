@@ -1,7 +1,7 @@
 import { SETTINGS } from "./Settings";
 import { board, travel, Position, changeTravel, valuesBoard } from "./index";
 import { FallingObjects } from "./travelChildren/FallingObjects"
-import { gameEnd } from "./functions"
+import { checkGameStart, destroyAround, gameEnd, gameLost, timeout } from "./functions"
 
 export class Travel {
     event: KeyboardEvent;
@@ -119,7 +119,16 @@ export class Travel {
                 console.log("wygrales gre, gratulacje");
 
                 break;
+            case "m":
+                gameEnd();
+                destroyAround(this.position.i, this.position.j, "p");
+                destroyAround(this.position.i + mI, this.position.j + mJ, "p");
+                await timeout(1500)
+                
+                gameLost();
 
+                await checkGameStart()
+                break;
         }
 
         let fallingObjects = new FallingObjects()

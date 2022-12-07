@@ -177,6 +177,10 @@
     background-image: url("img/o.png");
 }
 
+.m {
+    background-color: aqua;
+}
+
 .movingLeft {
     background-image: url("img/movingLeft.gif");
 }

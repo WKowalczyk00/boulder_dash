@@ -4,6 +4,7 @@ import { Travel } from "./Travel"
 import { ValuesBoard } from "./ValuesBoard"
 import { StartGame } from "./StartGame"
 import { timeout } from "./functions"
+import { MovingObjects } from "./MovingObjects"
 console.table(SETTINGS.board);
 
 type Position = { i: number, j: number }
@@ -11,6 +12,7 @@ let board: Board;
 let travel: Travel;
 let valuesBoard: ValuesBoard;
 let startGame: StartGame;
+let movingObjects: MovingObjects;
 
 let keyup: (e: KeyboardEvent) => void;
 let keydown: (e: KeyboardEvent) => void;
@@ -20,6 +22,7 @@ const gameStart = async () => {
     await timeout(5000)
     valuesBoard = new ValuesBoard();
     board = new Board();
+    movingObjects = new MovingObjects();
 
     keydown = (e: KeyboardEvent) => {
         //is being held
@@ -52,4 +55,4 @@ window.onload = async () => {
 const changeTravel = (newTravel: Travel) => {
     travel = newTravel
 }
-export { board, travel, valuesBoard, Position, changeTravel, keydown, keyup, gameStart }
+export { board, travel, valuesBoard, movingObjects, Position, changeTravel, keydown, keyup, gameStart }
