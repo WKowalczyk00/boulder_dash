@@ -29,7 +29,7 @@ export class StartGame {
             }
         }
 
-        let x: Position;
+        let x!: Position;
         let xDiv!: HTMLElement;
         for (let i = 0; i < SETTINGS.board.length; i++) {
             for (let j = 0; j < SETTINGS.board[i].length; j++) {
@@ -54,14 +54,14 @@ export class StartGame {
                 }, i * 3);
             })(i);
         });
-        await this.walkingGuy(xDiv);
+        await this.walkingGuy(xDiv, x);
 
 
     }
     startAnimation = async () => {
         this.gameLostDiv.style.display = "block"
         this.gameLostDiv.style.color = "white"
-        this.gameLostDiv.innerHTML = "Player1, 1 men ,cave A/1"
+        this.gameLostDiv.innerHTML = "Player1, " + SETTINGS.lives + " men ,cave A/1"
         this.boardDiv.style.animationName = "startGame"
 
     }
@@ -76,7 +76,7 @@ export class StartGame {
         await this.createBoard(arr)
 
     }
-    walkingGuy = async (xDiv: HTMLElement) => {
+    walkingGuy = async (xDiv: HTMLElement, x: Position) => {
         for (let i = 0; i < 9; i++) {
             (function (index) {
                 setTimeout(function () {
@@ -99,8 +99,11 @@ export class StartGame {
         xDiv.className = "square boom3"
         console.log("boom3");
         await timeout(200)
-        // xDiv.className = "square X";
-        SETTINGS.board = SETTINGS.boardBackup
+        xDiv.className = "square X";
+        // const backupBoard = SETTINGS.boardBackup
+        // SETTINGS.board = [...backupBoard];
+        SETTINGS.board[x.i][x.j] = "X"
+        console.table(SETTINGS.board)
 
     }
     shuffle = (array: Position[]) => {

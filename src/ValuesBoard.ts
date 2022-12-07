@@ -1,6 +1,6 @@
 import { SETTINGS } from "./Settings";
-import { board, travel, Position, changeTravel, keydown, keyup } from "./index";
-import { gameEnd } from "./functions";
+import { board, travel, Position, changeTravel, keydown, keyup, gameStart } from "./index";
+import { checkGameStart, gameEnd, gameLost } from "./functions";
 
 export class ValuesBoard {
     pointsPerNextLevel: number = SETTINGS.levelClear;
@@ -82,6 +82,7 @@ export class ValuesBoard {
 
     lostByTime = async () => {
         gameEnd()
+
         const gameLostDiv = document.getElementById("gameLost") as HTMLElement
         let position: Position;
         for (let i = 0; i < 5; i++) {
@@ -97,8 +98,12 @@ export class ValuesBoard {
 
         var audio = new Audio('sounds/stone-fall.mp3');
         audio.play();
-        // await this.timeout(5000)
+        await this.timeout(1000)
 
+
+        gameLost();
+        console.table(SETTINGS.boardBackup)
+        await checkGameStart();
     }
 
     destroyAround = (i: number, j: number) => {
@@ -134,7 +139,7 @@ export class ValuesBoard {
         for (let i = 0; i < 5; i++) {
             gameLostDiv.style.display = "block"
             gameLostDiv.style.backgroundColor = "gold"
-            gameLostDiv.innerHTML = "gratulacje, wygrana :)))"
+            gameLostDiv.innerHTML = "congrats, you won :)))"
             await this.timeout(1000)
             gameLostDiv.style.display = "none"
             await this.timeout(1000)

@@ -61,7 +61,8 @@ export const SETTINGS = {
     boardPart: [{ i: 14, j: 25 }, { i: 14, j: 16 }, { i: 8, j: 25 }, { i: 8, j: 16 }],
     FALLING_STONE_TIME_MS: 250, // time in which stone is falling
     HOLD_KEY_TIME_MS: 125, //time to next move while holding key
-    timerStart: 150, //strart of the timer in seconds
+    timerStart: 10, //strart of the timer in seconds
     scoreForPoint: 10, //amount of score per point 
     levelClear: 5, //amount of points needed to clear level
+    lives: 3,
 }

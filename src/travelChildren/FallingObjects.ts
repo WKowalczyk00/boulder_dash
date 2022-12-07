@@ -1,6 +1,6 @@
 import { SETTINGS } from "../Settings";
 import { board, Position, keydown, keyup, valuesBoard } from "../index";
-import { gameEnd } from "../functions";
+import { checkGameStart, gameEnd, gameLost } from "../functions";
 export class FallingObjects {
     itemPosition: Position;
     itemType: string;
@@ -45,7 +45,7 @@ export class FallingObjects {
                     var audio = new Audio('sounds/stone-fall.mp3');
                     audio.play();
                 }
-                else if (SETTINGS.board[i + 2][j] != "" && type == "p") { 
+                else if (SETTINGS.board[i + 2][j] != "" && type == "p") {
                     // await this.timeout(SETTINGS.FALLING_STONE_TIME_MS / 2)
                     var audio = new Audio('sounds/point-fall.mp3');
                     audio.play();
@@ -112,6 +112,9 @@ export class FallingObjects {
                 this.check();
                 board.create();
                 console.log("przegrales/as n00bku");
+                await this.timeout(1000);
+                gameLost();
+                checkGameStart();
 
             }
 
