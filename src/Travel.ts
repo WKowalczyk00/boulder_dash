@@ -121,10 +121,22 @@ export class Travel {
                 break;
             case "m":
                 gameEnd();
+                SETTINGS.board[this.position.i][this.position.j] = "p"
                 destroyAround(this.position.i, this.position.j, "p");
                 destroyAround(this.position.i + mI, this.position.j + mJ, "p");
                 await timeout(1500)
-                
+
+                gameLost();
+
+                await checkGameStart()
+                break;
+            case "q":
+                gameEnd();
+                SETTINGS.board[this.position.i][this.position.j] = ""
+                destroyAround(this.position.i, this.position.j, "");
+                destroyAround(this.position.i + mI, this.position.j + mJ, "");
+                await timeout(1500)
+
                 gameLost();
 
                 await checkGameStart()

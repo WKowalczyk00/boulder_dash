@@ -1,3 +1,4 @@
+import { checkGameStart, destroyAround, gameEnd, gameLost } from "../functions";
 import { board, Position } from "../index";
 import { SETTINGS } from "../Settings";
 import { FallingObjects } from "../travelChildren/FallingObjects";
@@ -32,47 +33,73 @@ export class MovingEntity {
         return new Promise(resolve => setTimeout(resolve, ms))
     }
     checkEntityMove = async () => {
-        console.log(this.left);
-
-        let tb = 1
-        if ((this.direction.i == this.left.i && this.direction.j == this.left.j) || (this.direction.i == this.right.i && this.direction.j == this.right.j)) {
-            console.log("left|right");
-            tb = -1
-        }
-
-        if (SETTINGS.board[this.position.i + this.direction.j * tb][this.position.j + this.direction.i * tb] == "") {
-            await this.moveEntity(this.position.i + this.direction.j * tb, this.position.j + this.direction.i * tb)
-
-        }
-        else if (SETTINGS.board[this.position.i + this.direction.i][this.position.j + this.direction.j] == "") {
-            await this.moveEntity(this.position.i + this.direction.i, this.position.j + this.direction.j)
-        }
-        else if (SETTINGS.board[this.position.i - this.direction.j * tb][this.position.j - this.direction.i * tb] == "") {
-            await this.moveEntity(this.position.i - this.direction.j * tb, this.position.j - this.direction.i * tb)
-        }
-        else if (SETTINGS.board[this.position.i - this.direction.i][this.position.j - this.direction.j] == "") {
-            await this.moveEntity(this.position.i - this.direction.i, this.position.j - this.direction.j)
-        }
-
+        // console.log(this.left);
         if (this.lost == true) {
             return 0;
         }
 
-        await this.timeout(1000)
+        let tb = 1
+        if ((this.direction.i == this.left.i && this.direction.j == this.left.j) || (this.direction.i == this.right.i && this.direction.j == this.right.j)) {
+            // console.log("left|right");
+            tb = -1
+        }
+
+        if (SETTINGS.board[this.position.i + this.direction.j * tb][this.position.j + this.direction.i * tb] == "" || SETTINGS.board[this.position.i + this.direction.j * tb][this.position.j + this.direction.i * tb] == "X") {
+            await this.moveEntity(this.position.i + this.direction.j * tb, this.position.j + this.direction.i * tb)
+
+        }
+        else if (SETTINGS.board[this.position.i + this.direction.i][this.position.j + this.direction.j] == "" || SETTINGS.board[this.position.i + this.direction.i][this.position.j + this.direction.j] == "X") {
+            await this.moveEntity(this.position.i + this.direction.i, this.position.j + this.direction.j)
+        }
+        else if (SETTINGS.board[this.position.i - this.direction.j * tb][this.position.j - this.direction.i * tb] == "" || SETTINGS.board[this.position.i - this.direction.j * tb][this.position.j - this.direction.i * tb] == "X") {
+            await this.moveEntity(this.position.i - this.direction.j * tb, this.position.j - this.direction.i * tb)
+        }
+        else if (SETTINGS.board[this.position.i - this.direction.i][this.position.j - this.direction.j] == "" || SETTINGS.board[this.position.i - this.direction.i][this.position.j - this.direction.j] == "X") {
+            await this.moveEntity(this.position.i - this.direction.i, this.position.j - this.direction.j)
+        }
+
+        
+
+        await this.timeout(SETTINGS.butterflyMoveTime)
         await this.checkEntityMove();
     }
     moveEntity = async (mI: number, mJ: number) => {
         // await this.timeout(500);
-        if (SETTINGS.board[mI][mJ] == "") {
-            await this.changeDirection(mI, mJ);
+        if (SETTINGS.board[mI][mJ] == "" || SETTINGS.board[mI][mJ] == "X") {
+            if (SETTINGS.board[mI][mJ] == "X") {
+                //przegrana
 
-            SETTINGS.board[mI][mJ] = this.type
-            SETTINGS.board[this.position.i][this.position.j] = ""
+                console.log("lolek");
 
-            this.position = { i: mI, j: mJ }
-            let fallingObjects = new FallingObjects
-            fallingObjects.check();
-            board.create();
+                gameEnd();
+                if (this.type == "m") {
+                    SETTINGS.board[mI][mJ] = "p"
+                    destroyAround(this.position.i, this.position.j, "p")
+                    destroyAround(mI, mJ, "p")
+                }
+                else {
+                    SETTINGS.board[mI][mJ] = ""
+                    destroyAround(this.position.i, this.position.j, "")
+                    destroyAround(mI, mJ, "")
+                }
+                this.lost = true;
+                await this.timeout(1500)
+                gameLost();
+                await checkGameStart()
+            }
+            else {
+                await this.changeDirection(mI, mJ);
+
+                SETTINGS.board[mI][mJ] = this.type
+                SETTINGS.board[this.position.i][this.position.j] = ""
+
+                this.position = { i: mI, j: mJ }
+                let fallingObjects = new FallingObjects
+                fallingObjects.check();
+                board.create();
+            }
+
+
         }
 
     }
@@ -80,27 +107,27 @@ export class MovingEntity {
         //top
         // const oldDirection = this.direction
         if (mI < this.position.i) {
-            console.log("top");
+            // console.log("top");
             this.direction = { i: -1, j: 0 }
 
         }
         //bottom
         else if (mI > this.position.i) {
-            console.log("bottom");
+            // console.log("bottom");
 
             this.direction = { i: 1, j: 0 }
 
         }
         //right
         else if (mJ > this.position.j) {
-            console.log("right");
+            // console.log("right");
             this.direction = { i: 0, j: 1 }
             // if()
 
         }
         //left
         else if (mJ < this.position.j) {
-            console.log("left");
+            // console.log("left");
 
             this.direction = { i: 0, j: -1 }
 

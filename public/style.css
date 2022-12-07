@@ -69,8 +69,12 @@
 
 #purpose {
     margin-left: 3px;
-    width: 280px;
+    width: 340px;
     color: gold;
+}
+
+#pointValue {
+    color: white;
 }
 
 #purpose>* {
@@ -85,12 +89,12 @@
 }
 
 #points {
-    width: 240px;
+    width: 220px;
     color: gold;
 }
 
 #timer {
-    width: 240px;
+    width: 220px;
     color: white;
 }
 
@@ -178,7 +182,11 @@
 }
 
 .m {
-    background-color: aqua;
+    background-image: url("img/m.gif");
+}
+
+.q {
+    background-image: url("img/q.gif");
 }
 
 .movingLeft {

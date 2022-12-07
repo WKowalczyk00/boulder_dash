@@ -55,4 +55,7 @@ window.onload = async () => {
 const changeTravel = (newTravel: Travel) => {
     travel = newTravel
 }
-export { board, travel, valuesBoard, movingObjects, Position, changeTravel, keydown, keyup, gameStart }
+const changeMovingObjects = (newMovingObjects: MovingObjects) => {
+    movingObjects = newMovingObjects
+}
+export { board, travel, valuesBoard, movingObjects, Position, changeTravel, keydown, keyup, gameStart,changeMovingObjects }
