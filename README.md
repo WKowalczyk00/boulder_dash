@@ -3,7 +3,7 @@
 <!-- HEADER STYLE: CLASSIC -->
 <div align="center">
 
-<img src="readmeai/assets/logos/purple.svg" width="30%" style="position: relative; top: 0; right: 0;" alt="Project Logo"/>
+<img src="public/img/BD-logo.png" width="30%" style="position: relative; top: 0; right: 0;" alt="Project Logo"/>
 
 # BOULDER_DASH
 
@@ -71,6 +71,7 @@ This project is a TypeScript-based interpretation of the original Boulder Dash f
     ├── public
     │   ├── bundle.js
     │   ├── font
+    │   │   └── Boulder Dash 6128.ttf
     │   ├── img
     │   ├── index.html
     │   ├── sounds
@@ -81,13 +82,16 @@ This project is a TypeScript-based interpretation of the original Boulder Dash f
     │   ├── index.ts
     │   ├── MovingObjects.ts
     │   ├── movingObjectsChildren
+    │   │   └── MovingEntity.ts
     │   ├── Settings.ts
     │   ├── StartGame.ts
     │   ├── Travel.ts
     │   ├── travelChildren
+    │   │   └── FallingObjects.ts
     │   └── ValuesBoard.ts
     ├── tsconfig.json
     └── webpack.config.js
+
 ```
 
 ### Project Index
