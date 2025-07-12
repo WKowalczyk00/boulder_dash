@@ -94,7 +94,6 @@ This project is a TypeScript-based interpretation of the original Boulder Dash f
 
 <details open>
 	<summary><b><code>BOULDER_DASH/</code></b></summary>
-
 	<!-- __root__ Submodule -->
 	<details>
 		<summary><b>__root__</b></summary>
@@ -128,7 +127,6 @@ This project is a TypeScript-based interpretation of the original Boulder Dash f
 			</table>
 		</blockquote>
 	</details>
-
 	<!-- public Submodule -->
 	<details>
 		<summary><b>public</b></summary>
@@ -156,7 +154,6 @@ This project is a TypeScript-based interpretation of the original Boulder Dash f
 					<td style='padding: 8px;'>Styling for the game UI</td>
 				</tr>
 			</table>
-
 			<!-- font Submodule -->
 			<details>
 				<summary><b>font</b></summary>
@@ -178,10 +175,8 @@ This project is a TypeScript-based interpretation of the original Boulder Dash f
 					</table>
 				</blockquote>
 			</details>
-
 		</blockquote>
 	</details>
-
 	<!-- src Submodule -->
 	<details>
 		<summary><b>src</b></summary>
@@ -229,7 +224,6 @@ This project is a TypeScript-based interpretation of the original Boulder Dash f
 					<td style='padding: 8px;'>Tile values and map generation</td>
 				</tr>
 			</table>
-
 			<!-- movingObjectsChildren Submodule -->
 			<details>
 				<summary><b>movingObjectsChildren</b></summary>
@@ -251,7 +245,6 @@ This project is a TypeScript-based interpretation of the original Boulder Dash f
 					</table>
 				</blockquote>
 			</details>
-
 			<!-- travelChildren Submodule -->
 			<details>
 				<summary><b>travelChildren</b></summary>
@@ -273,7 +266,6 @@ This project is a TypeScript-based interpretation of the original Boulder Dash f
 					</table>
 				</blockquote>
 			</details>
-
 		</blockquote>
 	</details>
 
