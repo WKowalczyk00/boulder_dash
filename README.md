@@ -308,11 +308,6 @@ Build boulder_dash from the source and intsall dependencies:
 
 <!-- SHIELDS BADGE CURRENTLY DISABLED -->
 
-    <!-- [![npm][npm-shield]][npm-link] -->
-    <!-- REFERENCE LINKS -->
-    <!-- [npm-shield]: https://img.shields.io/badge/npm-CB3837.svg?style={badge_style}&logo=npm&logoColor=white -->
-    <!-- [npm-link]: https://www.npmjs.com/ -->
-
     **Using [npm](https://www.npmjs.com/):**
 
     ```sh
