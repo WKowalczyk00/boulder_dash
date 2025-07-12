@@ -52,15 +52,13 @@ This project is a TypeScript-based interpretation of the original Boulder Dash f
 
 ## Features
 
-<code>🔹 Classic gameplay inspired by the original Boulder Dash
-
+<code>
+🔹 Classic gameplay inspired by the original Boulder Dash
 🎮 Keyboard controls with intuitive movement
-
 🧱 Dynamic environment: falling rocks, destructible terrain, reactive surroundings
-
 💎 Gem collection and limited time management
-
-🧠 Simple enemy and collision logic</code>
+🧠 Simple enemy and collision logic
+</code>
 
 ---
 
@@ -96,12 +94,14 @@ This project is a TypeScript-based interpretation of the original Boulder Dash f
 
 <details open>
 	<summary><b><code>BOULDER_DASH/</code></b></summary>
+
 	<!-- __root__ Submodule -->
 	<details>
 		<summary><b>__root__</b></summary>
 		<blockquote>
 			<div class='directory-path' style='padding: 8px 0; color: #666;'>
 				<code><b>⦿ __root__</b></code>
+			</div>
 			<table style='width: 100%; border-collapse: collapse;'>
 			<thead>
 				<tr style='background-color: #f8f9fa;'>
@@ -110,30 +110,32 @@ This project is a TypeScript-based interpretation of the original Boulder Dash f
 				</tr>
 			</thead>
 				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/package-lock.json'>package-lock.json</a></b></td>
-					<td style='padding: 8px;'>Code>❯ Dependency tree lock for npm packages</code></td>
+					<td style='padding: 8px;'><b><a href='./boulder_dash/package-lock.json'>package-lock.json</a></b></td>
+					<td style='padding: 8px;'>Exact package versions for dependency management</td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/package.json'>package.json</a></b></td>
-					<td style='padding: 8px;'>Code>❯ Project metadata and script definitions</code></td>
+					<td style='padding: 8px;'><b><a href='./boulder_dash/package.json'>package.json</a></b></td>
+					<td style='padding: 8px;'>Project metadata and dependencies list</td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/tsconfig.json'>tsconfig.json</a></b></td>
-					<td style='padding: 8px;'>Code>❯ TypeScript compiler configuration</code></td>
+					<td style='padding: 8px;'><b><a href='./boulder_dash/tsconfig.json'>tsconfig.json</a></b></td>
+					<td style='padding: 8px;'>TypeScript compiler configuration</td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/webpack.config.js'>webpack.config.js</a></b></td>
-					<td style='padding: 8px;'>Code>❯ Webpack bundler configuration</code></td>
+					<td style='padding: 8px;'><b><a href='./boulder_dash/webpack.config.js'>webpack.config.js</a></b></td>
+					<td style='padding: 8px;'>Webpack bundler setup and build rules</td>
 				</tr>
 			</table>
 		</blockquote>
 	</details>
+
 	<!-- public Submodule -->
 	<details>
 		<summary><b>public</b></summary>
 		<blockquote>
 			<div class='directory-path' style='padding: 8px 0; color: #666;'>
 				<code><b>⦿ public</b></code>
+			</div>
 			<table style='width: 100%; border-collapse: collapse;'>
 			<thead>
 				<tr style='background-color: #f8f9fa;'>
@@ -142,24 +144,26 @@ This project is a TypeScript-based interpretation of the original Boulder Dash f
 				</tr>
 			</thead>
 				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/public\bundle.js'>bundle.js</a></b></td>
-					<td style='padding: 8px;'>Code>❯ Compiled JS bundle for browser execution</code></td>
+					<td style='padding: 8px;'><b><a href='./boulder_dash/public/bundle.js'>bundle.js</a></b></td>
+					<td style='padding: 8px;'>Compiled and bundled JavaScript for the game</td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/public\index.html'>index.html</a></b></td>
-					<td style='padding: 8px;'>Code>❯ Main HTML layout and game canvas</code></td>
+					<td style='padding: 8px;'><b><a href='./boulder_dash/public/index.html'>index.html</a></b></td>
+					<td style='padding: 8px;'>Main HTML file and game canvas container</td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/public\style.css'>style.css</a></b></td>
-					<td style='padding: 8px;'>Code>❯ Stylesheet for game UI and layout</code></td>
+					<td style='padding: 8px;'><b><a href='./boulder_dash/public/style.css'>style.css</a></b></td>
+					<td style='padding: 8px;'>Styling for the game UI</td>
 				</tr>
 			</table>
+
 			<!-- font Submodule -->
 			<details>
 				<summary><b>font</b></summary>
 				<blockquote>
 					<div class='directory-path' style='padding: 8px 0; color: #666;'>
-						<code><b>⦿ public.font</b></code>
+						<code><b>⦿ public/font</b></code>
+					</div>
 					<table style='width: 100%; border-collapse: collapse;'>
 					<thead>
 						<tr style='background-color: #f8f9fa;'>
@@ -168,20 +172,23 @@ This project is a TypeScript-based interpretation of the original Boulder Dash f
 						</tr>
 					</thead>
 						<tr style='border-bottom: 1px solid #eee;'>
-							<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/public\font\Boulder Dash 6128.ttf'>Boulder Dash 6128.ttf</a></b></td>
-							<td style='padding: 8px;'>Code>❯ Custom pixel font for retro aesthetics</code></td>
+							<td style='padding: 8px;'><b><a href='./boulder_dash/public/font/Boulder Dash 6128.ttf'>Boulder Dash 6128.ttf</a></b></td>
+							<td style='padding: 8px;'>Custom font used in the game</td>
 						</tr>
 					</table>
 				</blockquote>
 			</details>
+
 		</blockquote>
 	</details>
+
 	<!-- src Submodule -->
 	<details>
 		<summary><b>src</b></summary>
 		<blockquote>
 			<div class='directory-path' style='padding: 8px 0; color: #666;'>
 				<code><b>⦿ src</b></code>
+			</div>
 			<table style='width: 100%; border-collapse: collapse;'>
 			<thead>
 				<tr style='background-color: #f8f9fa;'>
@@ -190,44 +197,46 @@ This project is a TypeScript-based interpretation of the original Boulder Dash f
 				</tr>
 			</thead>
 				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/src\Board.ts'>Board.ts</a></b></td>
-					<td style='padding: 8px;'>Code>❯ Main game board logic and tile updates</code></td>
+					<td style='padding: 8px;'><b><a href='./src/Board.ts'>Board.ts</a></b></td>
+					<td style='padding: 8px;'>Main game board logic and tile updates</td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/src\functions.ts'>functions.ts</a></b></td>
-					<td style='padding: 8px;'>Code>❯ Utility functions for object handling</code></td>
+					<td style='padding: 8px;'><b><a href='./src/functions.ts'>functions.ts</a></b></td>
+					<td style='padding: 8px;'>Utility functions for object handling</td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/src\index.ts'>index.ts</a></b></td>
-					<td style='padding: 8px;'>Code>❯ Game entry point and runtime init</code></td>
+					<td style='padding: 8px;'><b><a href='./src/index.ts'>index.ts</a></b></td>
+					<td style='padding: 8px;'>Game entry point and runtime init</td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/src\MovingObjects.ts'>MovingObjects.ts</a></b></td>
-					<td style='padding: 8px;'>Code>❯ Logic for movable game objects</code></td>
+					<td style='padding: 8px;'><b><a href='./src/MovingObjects.ts'>MovingObjects.ts</a></b></td>
+					<td style='padding: 8px;'>Logic for movable game objects</td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/src\Settings.ts'>Settings.ts</a></b></td>
-					<td style='padding: 8px;'>Code>❯ Game configuration and constants</code></td>
+					<td style='padding: 8px;'><b><a href='./src/Settings.ts'>Settings.ts</a></b></td>
+					<td style='padding: 8px;'>Game configuration and constants</td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/src\StartGame.ts'>StartGame.ts</a></b></td>
-					<td style='padding: 8px;'>Code>❯ Starting screen and level setup</code></td>
+					<td style='padding: 8px;'><b><a href='./src/StartGame.ts'>StartGame.ts</a></b></td>
+					<td style='padding: 8px;'>Starting screen and level setup</td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/src\Travel.ts'>Travel.ts</a></b></td>
-					<td style='padding: 8px;'>Code>❯ Collision detection and movement rules</code></td>
+					<td style='padding: 8px;'><b><a href='./src/Travel.ts'>Travel.ts</a></b></td>
+					<td style='padding: 8px;'>Collision detection and movement rules</td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
-					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/src\ValuesBoard.ts'>ValuesBoard.ts</a></b></td>
-					<td style='padding: 8px;'>Code>❯ Tile values and map generation</code></td>
+					<td style='padding: 8px;'><b><a href='./src/ValuesBoard.ts'>ValuesBoard.ts</a></b></td>
+					<td style='padding: 8px;'>Tile values and map generation</td>
 				</tr>
 			</table>
+
 			<!-- movingObjectsChildren Submodule -->
 			<details>
 				<summary><b>movingObjectsChildren</b></summary>
 				<blockquote>
 					<div class='directory-path' style='padding: 8px 0; color: #666;'>
-						<code><b>⦿ src.movingObjectsChildren</b></code>
+						<code><b>⦿ src/movingObjectsChildren</b></code>
+					</div>
 					<table style='width: 100%; border-collapse: collapse;'>
 					<thead>
 						<tr style='background-color: #f8f9fa;'>
@@ -236,18 +245,20 @@ This project is a TypeScript-based interpretation of the original Boulder Dash f
 						</tr>
 					</thead>
 						<tr style='border-bottom: 1px solid #eee;'>
-							<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/src\movingObjectsChildren\MovingEntity.ts'>MovingEntity.ts</a></b></td>
-							<td style='padding: 8px;'>Code>❯ Base class for player and enemy behavior</code></td>
+							<td style='padding: 8px;'><b><a href='./src/movingObjectsChildren/MovingEntity.ts'>MovingEntity.ts</a></b></td>
+							<td style='padding: 8px;'>Base class for moving entities</td>
 						</tr>
 					</table>
 				</blockquote>
 			</details>
+
 			<!-- travelChildren Submodule -->
 			<details>
 				<summary><b>travelChildren</b></summary>
 				<blockquote>
 					<div class='directory-path' style='padding: 8px 0; color: #666;'>
-						<code><b>⦿ src.travelChildren</b></code>
+						<code><b>⦿ src/travelChildren</b></code>
+					</div>
 					<table style='width: 100%; border-collapse: collapse;'>
 					<thead>
 						<tr style='background-color: #f8f9fa;'>
@@ -256,15 +267,18 @@ This project is a TypeScript-based interpretation of the original Boulder Dash f
 						</tr>
 					</thead>
 						<tr style='border-bottom: 1px solid #eee;'>
-							<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/src\travelChildren\FallingObjects.ts'>FallingObjects.ts</a></b></td>
-							<td style='padding: 8px;'>Code>❯ Gravity and falling object interactions</code></td>
+							<td style='padding: 8px;'><b><a href='./src/travelChildren/FallingObjects.ts'>FallingObjects.ts</a></b></td>
+							<td style='padding: 8px;'>Logic for falling objects and physics</td>
 						</tr>
 					</table>
 				</blockquote>
 			</details>
+
 		</blockquote>
 	</details>
+
 </details>
+
 
 
 ---
