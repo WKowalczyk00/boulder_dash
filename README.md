@@ -32,28 +32,35 @@
 - [Overview](#overview)
 - [Features](#features)
 - [Project Structure](#project-structure)
-    - [Project Index](#project-index)
+  - [Project Index](#project-index)
 - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [Testing](#testing)
-- [Roadmap](#roadmap)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
-- [Acknowledgments](#acknowledgments)
 
 ---
 
 ## Overview
 
+Boulder Dash is a classic arcade-inspired logic and action game where the player collects gems in an underground maze. The goal is to gather a required number of gems and reach the exit while avoiding falling boulders and enemies.
 
+This project is a TypeScript-based interpretation of the original Boulder Dash from the Atari era. It was one of my first larger personal projects, created during high school, aiming to faithfully recreate the core mechanics of the 1980s classic.
 
 ---
 
 ## Features
 
-<code>❯ REPLACE-ME</code>
+<code>🔹 Classic gameplay inspired by the original Boulder Dash
+
+🎮 Keyboard controls with intuitive movement
+
+🧱 Dynamic environment: falling rocks, destructible terrain, reactive surroundings
+
+💎 Gem collection and limited time management
+
+🧠 Simple enemy and collision logic</code>
 
 ---
 
@@ -104,19 +111,19 @@
 			</thead>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/package-lock.json'>package-lock.json</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Code>❯ Dependency tree lock for npm packages</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/package.json'>package.json</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Code>❯ Project metadata and script definitions</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/tsconfig.json'>tsconfig.json</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Code>❯ TypeScript compiler configuration</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/webpack.config.js'>webpack.config.js</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Code>❯ Webpack bundler configuration</code></td>
 				</tr>
 			</table>
 		</blockquote>
@@ -136,15 +143,15 @@
 			</thead>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/public\bundle.js'>bundle.js</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Code>❯ Compiled JS bundle for browser execution</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/public\index.html'>index.html</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Code>❯ Main HTML layout and game canvas</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/public\style.css'>style.css</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Code>❯ Stylesheet for game UI and layout</code></td>
 				</tr>
 			</table>
 			<!-- font Submodule -->
@@ -162,7 +169,7 @@
 					</thead>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/public\font\Boulder Dash 6128.ttf'>Boulder Dash 6128.ttf</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+							<td style='padding: 8px;'>Code>❯ Custom pixel font for retro aesthetics</code></td>
 						</tr>
 					</table>
 				</blockquote>
@@ -184,35 +191,35 @@
 			</thead>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/src\Board.ts'>Board.ts</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Code>❯ Main game board logic and tile updates</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/src\functions.ts'>functions.ts</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Code>❯ Utility functions for object handling</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/src\index.ts'>index.ts</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Code>❯ Game entry point and runtime init</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/src\MovingObjects.ts'>MovingObjects.ts</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Code>❯ Logic for movable game objects</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/src\Settings.ts'>Settings.ts</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Code>❯ Game configuration and constants</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/src\StartGame.ts'>StartGame.ts</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Code>❯ Starting screen and level setup</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/src\Travel.ts'>Travel.ts</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Code>❯ Collision detection and movement rules</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/src\ValuesBoard.ts'>ValuesBoard.ts</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Code>❯ Tile values and map generation</code></td>
 				</tr>
 			</table>
 			<!-- movingObjectsChildren Submodule -->
@@ -230,7 +237,7 @@
 					</thead>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/src\movingObjectsChildren\MovingEntity.ts'>MovingEntity.ts</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+							<td style='padding: 8px;'>Code>❯ Base class for player and enemy behavior</code></td>
 						</tr>
 					</table>
 				</blockquote>
@@ -250,7 +257,7 @@
 					</thead>
 						<tr style='border-bottom: 1px solid #eee;'>
 							<td style='padding: 8px;'><b><a href='./boulder_dash/blob/master/src\travelChildren\FallingObjects.ts'>FallingObjects.ts</a></b></td>
-							<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+							<td style='padding: 8px;'>Code>❯ Gravity and falling object interactions</code></td>
 						</tr>
 					</table>
 				</blockquote>
@@ -258,6 +265,7 @@
 		</blockquote>
 	</details>
 </details>
+
 
 ---
 
@@ -276,65 +284,46 @@ Build boulder_dash from the source and intsall dependencies:
 
 1. **Clone the repository:**
 
-    ```sh
-    ❯ git clone ../boulder_dash
-    ```
+   ```sh
+   ❯ git clone ../boulder_dash
+   ```
 
 2. **Navigate to the project directory:**
 
-    ```sh
-    ❯ cd boulder_dash
-    ```
+   ```sh
+   ❯ cd boulder_dash
+   ```
 
 3. **Install the dependencies:**
 
 <!-- SHIELDS BADGE CURRENTLY DISABLED -->
-	<!-- [![npm][npm-shield]][npm-link] -->
-	<!-- REFERENCE LINKS -->
-	<!-- [npm-shield]: https://img.shields.io/badge/npm-CB3837.svg?style={badge_style}&logo=npm&logoColor=white -->
-	<!-- [npm-link]: https://www.npmjs.com/ -->
 
-	**Using [npm](https://www.npmjs.com/):**
+    <!-- [![npm][npm-shield]][npm-link] -->
+    <!-- REFERENCE LINKS -->
+    <!-- [npm-shield]: https://img.shields.io/badge/npm-CB3837.svg?style={badge_style}&logo=npm&logoColor=white -->
+    <!-- [npm-link]: https://www.npmjs.com/ -->
 
-	```sh
-	❯ npm install
-	```
+    **Using [npm](https://www.npmjs.com/):**
+
+    ```sh
+    ❯ npm install
+    ```
 
 ### Usage
 
 Run the project with:
 
 **Using [npm](https://www.npmjs.com/):**
+
 ```sh
 npm start
 ```
 
-### Testing
-
-Boulder_dash uses the {__test_framework__} test framework. Run the test suite with:
-
-**Using [npm](https://www.npmjs.com/):**
-```sh
-npm test
-```
-
----
-
-## Roadmap
-
-- [X] **`Task 1`**: <strike>Implement feature one.</strike>
-- [ ] **`Task 2`**: Implement feature two.
-- [ ] **`Task 3`**: Implement feature three.
 
 ---
 
 ## Contributing
 
-- **💬 [Join the Discussions](https://LOCAL//boulder_dash/discussions)**: Share your insights, provide feedback, or ask questions.
-- **🐛 [Report Issues](https://LOCAL//boulder_dash/issues)**: Submit bugs found or log feature requests for the `boulder_dash` project.
-- **💡 [Submit Pull Requests](https://LOCAL//boulder_dash/blob/main/CONTRIBUTING.md)**: Review open PRs, and submit your own PRs.
-
-<details closed>
 <summary>Contributing Guidelines</summary>
 
 1. **Fork the Repository**: Start by forking the project repository to your LOCAL account.
@@ -357,29 +346,12 @@ npm test
    ```
 7. **Submit a Pull Request**: Create a PR against the original project repository. Clearly describe the changes and their motivations.
 8. **Review**: Once your PR is reviewed and approved, it will be merged into the main branch. Congratulations on your contribution!
-</details>
-
-<details closed>
-<summary>Contributor Graph</summary>
-<br>
-<p align="left">
-   <a href="https://LOCAL{//boulder_dash/}graphs/contributors">
-      <img src="https://contrib.rocks/image?repo=/boulder_dash">
-   </a>
-</p>
-</details>
 
 ---
 
 ## License
 
-Boulder_dash is protected under the [LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
-
----
-
-## Acknowledgments
-
-- Credit `contributors`, `inspiration`, `references`, etc.
+Boulder_dash is protected under the [LICENSE](https://choosealicense.com/licenses/mit/) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/mit/) file.
 
 <div align="right">
 
@@ -387,8 +359,6 @@ Boulder_dash is protected under the [LICENSE](https://choosealicense.com/license
 
 </div>
 
-
 [back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square
-
 
 ---
